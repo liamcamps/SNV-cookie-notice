@@ -39,6 +39,15 @@ if (function_exists('acf_add_options_page')) {
 	register_activation_hook( __FILE__, 'stijlenvorm_admin_notice_example_activation_hook' );
 	include_once( 'lib/config/adminnotice.php' );
 
+	// Add settings link to plugin page
+	function plugin_add_settings_link( $links ) {
+	    $settings_link = '<a href="options-general.php?page=acf-options-cookie-notice-instellingen">' . __( 'Settings' ) . '</a>';
+	    array_unshift($links, $settings_link);
+	  	return $links;
+	}
+	$plugin = plugin_basename( __FILE__ );
+	add_filter( "plugin_action_links_$plugin", 'plugin_add_settings_link' );
+
 	// include hex to RGBA library
 	include_once( 'lib/functions/hex2rgba.php' );
 
