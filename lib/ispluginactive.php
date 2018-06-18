@@ -22,8 +22,7 @@
  * @param  [string] $version_to_check
  *                  Optional, verify certain version of the dependent plugin
  */
- 
-function stijlenvorm_is_this_plugin_active($my_plugin_name, $dependency_plugin_name, $path_to_plugin, $textdomain = '', $version_to_check = null) {
+function stijlenvorm_is_this_plugin_active($pluginfile, $my_plugin_name, $dependency_plugin_name, $path_to_plugin, $textdomain = '', $version_to_check = null) {
 
     # Needed to the function "deactivate_plugins" works
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
@@ -31,7 +30,7 @@ function stijlenvorm_is_this_plugin_active($my_plugin_name, $dependency_plugin_n
     if( !is_plugin_active( $path_to_plugin ) )
     {
         # Deactivate the current plugin
-        deactivate_plugins( plugin_basename( __FILE__ ) );
+        deactivate_plugins( plugin_basename( $pluginfile ) );
 
         # Show an error alert on the admin area
         add_action( 'admin_notices', function() use($my_plugin_name, $dependency_plugin_name, $textdomain)
@@ -72,7 +71,7 @@ function stijlenvorm_is_this_plugin_active($my_plugin_name, $dependency_plugin_n
         if($error) {
 
             # Deactivate the current plugin
-            deactivate_plugins( plugin_basename( __FILE__ ) );
+            deactivate_plugins( plugin_basename( $pluginfile ) );
 
             add_action( 'admin_notices', function() use($my_plugin_name, $dependency_plugin_name, $version_to_check, $textdomain)
             {

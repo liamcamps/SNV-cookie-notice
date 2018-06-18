@@ -278,7 +278,7 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
+			'default_value' => 'Deze site gebruikt functionele, analytische én tracking cookies zodat we je een optimale website kunnen bieden. Als je gebruik wilt maken van alle functionaliteiten klik dan op Accepteren. Wil je meer informatie of niet alle cookies toestaan? Kies dan voor [settings]Instellingen[/settings]',
 			'tabs' => 'all',
 			'toolbar' => 'full',
 			'media_upload' => 1,
@@ -297,7 +297,7 @@ acf_add_local_field_group(array(
 				'class' => '',
 				'id' => '',
 			),
-			'default_value' => '',
+			'default_value' => 'Accepteren',
 			'placeholder' => '',
 			'prepend' => '',
 			'append' => '',
@@ -419,7 +419,7 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => '',
+					'default_value' => 'Noodzakelijk: Basis website',
 					'placeholder' => '',
 					'prepend' => '',
 					'append' => '',
@@ -438,7 +438,16 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => '',
+					'default_value' => '<strong>De website zal wel:</strong>
+<ul>
+ 	<li>Noodzakelijke cookies plaatsen (basisinstellingen onthouden)</li>
+ 	<li>Statistieken bijhouden</li>
+</ul>
+<strong>De website zal niet:</strong>
+<ul>
+ 	<li>Bezoekersinformatie gebruiken voor relevantere advertenties</li>
+ 	<li>Toestaan pagina\'s te delen middels social media</li>
+</ul>',
 					'tabs' => 'all',
 					'toolbar' => 'full',
 					'media_upload' => 1,
@@ -474,7 +483,7 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => '',
+					'default_value' => 'Aanbevolen: Ultieme website',
 					'placeholder' => '',
 					'prepend' => '',
 					'append' => '',
@@ -493,7 +502,13 @@ acf_add_local_field_group(array(
 						'class' => '',
 						'id' => '',
 					),
-					'default_value' => '',
+					'default_value' => '<strong>De website zal wel:</strong>
+<ul>
+ 	<li>Noodzakelijke cookies plaatsen (basisinstellingen onthouden)</li>
+ 	<li>Statistieken bijhouden</li>
+ 	<li>Bezoekersinformatie gebruiken voor relevantere advertenties</li>
+ 	<li>Toestaan pagina\'s te delen middels social media</li>
+</ul>',
 					'tabs' => 'all',
 					'toolbar' => 'full',
 					'media_upload' => 1,
