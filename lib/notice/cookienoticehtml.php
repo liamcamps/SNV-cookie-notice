@@ -13,8 +13,9 @@ function cookie_notice($mode = 'php'){
         			<div class="col cookie-padding border-right">
                         <?php if (get_field('cookie_notice_title', 'option')){ ?>
                             <h4><?php the_field('cookie_notice_title', 'option'); ?></h4>
-                        <?php } ?>
-        				<?php echo str_replace('[/settings]','</a>',str_replace('[settings]','<a href="'.get_field('cookie_notice_cookie_page','option').'">',get_field('cookie_notice_content', 'option'))); ?>
+                        <?php }
+                        $cookiepage = get_field('cookie_notice_cookie_page','option') ? get_field('cookie_notice_cookie_page','option') : get_site_url().'/cookies';
+                        echo str_replace('[/settings]','</a>',str_replace('[settings]','<a href="'.$cookiepage.'">',get_field('cookie_notice_content', 'option'))); ?>
         			</div>
         			<div class="col-auto p-0">
                         <a href="#" class="cookie-padding" data-cookie-notice="close"><?php the_field('cookie_notice_close_txt', 'option'); ?></a>

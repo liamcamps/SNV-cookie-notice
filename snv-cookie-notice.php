@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name:        Stijl & vorm Cookie notice
+Plugin Name:        Stijl & Vorm Cookie notice
 Plugin URI:         https://stijlenvorm.nl
 Description:        A plug-in to add a cookie notice to the front-end of the site and make it possible to load scripts after notice is accepted
-Version:            1.2.1
+Version:            1.2.2
 Author:             Liam Camps
 Author URI:         https://liamcamps.nl
 */
@@ -35,6 +35,10 @@ include_once( 'lib/ispluginactive.php' );
 stijlenvorm_is_this_plugin_active( __FILE__, 'Cookie notice', 'Advanced Custom Fields PRO', 'advanced-custom-fields-pro/acf.php');
 
 if (function_exists('acf_add_options_page')) {
+	// Add admin notice for the cookie page
+	register_activation_hook( __FILE__, 'stijlenvorm_admin_notice_example_activation_hook' );
+	include_once( 'lib/config/adminnotice.php' );
+
 	// include hex to RGBA library
 	include_once( 'lib/functions/hex2rgba.php' );
 
@@ -44,10 +48,10 @@ if (function_exists('acf_add_options_page')) {
 	// add cookie notice form function
 	include_once( 'lib/notice/cookieform.php' );
 
-	// the html for the main notice
+	// The shortcode for the form
 	include_once( 'lib/functions/cookieshortcode.php' );
 
-	// the html for the main notice
+	// Advanced custom fields setup
 	include_once( 'lib/config/acfsetup.php' );
 
 	// adds the cookie function to the footer if not in admin
