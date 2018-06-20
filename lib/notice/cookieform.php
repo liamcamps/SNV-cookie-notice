@@ -13,7 +13,7 @@ function cookie_notice_form() {
 	$output = '<form class="cookie-form mb-4" data-clear="'.$cookiereset.'">';
 		$output .= '<div class="row">';
 			$output .= '<div class="col-md-6 mb-0 d-flex">';
-				$output .= '<div class="card cookies"><label for="cookie_tool_level_0" class="card-body">';
+				$output .= '<div class="card cookies w-100"><label for="cookie_tool_level_0" class="card-body w-100 h-100">';
 				if (get_field('cookie_notice_functional', 'option') && is_array(get_field('cookie_notice_functional', 'option'))){
 					if (isset(get_field('cookie_notice_functional', 'option')['title'])) {
 						$output .= '<div class="custom-control custom-radio mb-3">';
@@ -32,7 +32,7 @@ function cookie_notice_form() {
 				$output .= '</label></div>';
 			$output .= '</div>';
 			$output .= '<div class="col-md-6 mb-0 d-flex">';
-				$output .= '<div class="card cookies"><label for="cookie_tool_level_1" class="card-body">';
+				$output .= '<div class="card cookies w-100"><label for="cookie_tool_level_1" class="card-body w-100 h-100">';
 				if (get_field('cookie_notice_tracking', 'option') && is_array(get_field('cookie_notice_tracking', 'option'))){
 					if (isset(get_field('cookie_notice_tracking', 'option')['title'])) {
 						$output .= '<div class="custom-control custom-radio mb-3">';
