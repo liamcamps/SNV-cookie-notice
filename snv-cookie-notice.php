@@ -3,7 +3,7 @@
 Plugin Name:        Stijl & Vorm Cookie notice
 Plugin URI:         https://stijlenvorm.nl
 Description:        A plug-in to add a cookie notice to the front-end of the site and make it possible to load scripts after notice is accepted
-Version:            1.2.2
+Version:            1.3.0
 Author:             Liam Camps
 Author URI:         https://liamcamps.nl
 */
@@ -56,6 +56,9 @@ if (function_exists('acf_add_options_page')) {
 
 	// add cookie notice form function
 	include_once( 'lib/notice/cookieform.php' );
+
+	// add cookie overview function
+	include_once( 'lib/notice/cookieoverview.php' );
 
 	// The shortcode for the form
 	include_once( 'lib/functions/cookieshortcode.php' );

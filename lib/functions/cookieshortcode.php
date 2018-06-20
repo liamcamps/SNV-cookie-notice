@@ -5,3 +5,8 @@ function cookie_options_shortcode() {
     return cookie_notice_form();
 }
 add_shortcode('cookie_options', 'cookie_options_shortcode');
+
+function cookie_overview_shortcode() {
+    return cookie_notice_overview();
+}
+add_shortcode('cookie_overview', 'cookie_overview_shortcode');

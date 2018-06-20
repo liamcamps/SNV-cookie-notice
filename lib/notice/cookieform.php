@@ -5,10 +5,15 @@ function cookie_notice_form() {
 	} else {
 		$active = 'tracking';
 	}
-	$output = '<form class="cookie-form mb-4">';
+	if (get_field('cookie_notice_reset_cookies','option')) {
+		$cookiereset = 'true';
+	} else {
+		$cookiereset = 'false';
+	}
+	$output = '<form class="cookie-form mb-4" data-clear="'.$cookiereset.'">';
 		$output .= '<div class="row">';
-			$output .= '<div class="col-md-6 mb-0">';
-				$output .= '<div class="card cookies h-100"><label for="cookie_tool_level_0" class="w-100 h-100 card-body">';
+			$output .= '<div class="col-md-6 mb-0 d-flex">';
+				$output .= '<div class="card cookies"><label for="cookie_tool_level_0" class="card-body">';
 				if (get_field('cookie_notice_functional', 'option') && is_array(get_field('cookie_notice_functional', 'option'))){
 					if (isset(get_field('cookie_notice_functional', 'option')['title'])) {
 						$output .= '<div class="custom-control custom-radio mb-3">';
@@ -26,8 +31,8 @@ function cookie_notice_form() {
 				}
 				$output .= '</label></div>';
 			$output .= '</div>';
-			$output .= '<div class="col-md-6 mb-0">';
-				$output .= '<div class="card cookies h-100"><label for="cookie_tool_level_1" class="w-100 h-100 card-body">';
+			$output .= '<div class="col-md-6 mb-0 d-flex">';
+				$output .= '<div class="card cookies"><label for="cookie_tool_level_1" class="card-body">';
 				if (get_field('cookie_notice_tracking', 'option') && is_array(get_field('cookie_notice_tracking', 'option'))){
 					if (isset(get_field('cookie_notice_tracking', 'option')['title'])) {
 						$output .= '<div class="custom-control custom-radio mb-3">';
@@ -45,6 +50,7 @@ function cookie_notice_form() {
 				}
 				$output .= '</label></div>';
 			$output .= '</div>';
+			$output .= '<div class="col-12"></div>';
 		$output .= '</div>';
 		$output .= '<div class="row justify-content-end">';
 			$output .= '<div class="col-auto"><a href="#" data-cookie-notice="save" class="mt-4 btn btn-primary">Opslaan</a></div>';

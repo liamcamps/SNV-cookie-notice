@@ -1,3 +1,3 @@
 # SNV-cookie-notice
-~Current Version:1.2.2~
+~Current Version:1.3.0~
 The cookie notice plugin for the new GDPR law
