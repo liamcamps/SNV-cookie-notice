@@ -1,7 +1,6 @@
 <?php
 function cookie_notice(){
     $border_style = get_field('cookie_notice_border', 'option');
-    echo $border_style;
     if ($border_style == 'top') {
         $border_class = ' border-top';
     } elseif ($border_style == 'around') {
