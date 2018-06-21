@@ -81,32 +81,6 @@ acf_add_local_field_group(array(
 			'ui_off_text' => '',
 		),
 		array(
-			'key' => 'field_5b226a988df82',
-			'label' => 'Gebruik php / Gebruik javascript',
-			'name' => 'cookie_notice_php_js',
-			'type' => 'select',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			'wrapper' => array(
-				'width' => '',
-				'class' => '',
-				'id' => '',
-			),
-			'choices' => array(
-				'php' => 'PHP',
-				'js' => 'Javascript',
-			),
-			'default_value' => array(
-			),
-			'allow_null' => 0,
-			'multiple' => 0,
-			'ui' => 0,
-			'ajax' => 0,
-			'return_format' => 'value',
-			'placeholder' => '',
-		),
-		array(
 			'key' => 'field_5b2270c010512',
 			'label' => 'Stijl',
 			'name' => 'cookie_notice_style',
@@ -159,6 +133,33 @@ acf_add_local_field_group(array(
 			'placeholder' => '',
 		),
 		array(
+			'key' => 'field_5b2b7879d5244',
+			'label' => 'Border',
+			'name' => 'cookie_notice_border',
+			'type' => 'select',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '20',
+				'class' => '',
+				'id' => '',
+			),
+			'choices' => array(
+				'none' => 'Geen',
+				'top' => 'Bovenaan',
+				'around' => 'Rondom',
+			),
+			'default_value' => array(
+			),
+			'allow_null' => 0,
+			'multiple' => 0,
+			'ui' => 0,
+			'ajax' => 0,
+			'return_format' => 'value',
+			'placeholder' => '',
+		),
+		array(
 			'key' => 'field_5b2262aa024ab',
 			'label' => 'Achtergrondkleur',
 			'name' => 'cookie_notice_background',
@@ -167,7 +168,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '25',
+				'width' => '20',
 				'class' => '',
 				'id' => '',
 			),
@@ -182,7 +183,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '25',
+				'width' => '20',
 				'class' => '',
 				'id' => '',
 			),
@@ -197,7 +198,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '25',
+				'width' => '20',
 				'class' => '',
 				'id' => '',
 			),
@@ -218,7 +219,7 @@ acf_add_local_field_group(array(
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array(
-				'width' => '25',
+				'width' => '20',
 				'class' => '',
 				'id' => '',
 			),

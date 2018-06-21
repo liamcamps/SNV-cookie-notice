@@ -3,7 +3,7 @@
 Plugin Name:        Stijl & Vorm Cookie notice
 Plugin URI:         https://stijlenvorm.nl
 Description:        A plug-in to add a cookie notice to the front-end of the site and make it possible to load scripts after notice is accepted
-Version:            1.3.2
+Version:            1.3.3
 Author:             Liam Camps
 Author URI:         https://liamcamps.nl
 */
@@ -68,11 +68,7 @@ if (function_exists('acf_add_options_page')) {
 
 	// adds the cookie function to the footer if not in admin
 	if (!is_admin()) {
-	    if (get_field('cookie_notice_php_js', 'option') == 'js') {
-	        add_action('wp_footer', 'cookie_notice_js');
-	    } else {
-	        add_action('wp_footer', 'cookie_notice_php');
-	    }
+	    add_action('wp_footer', 'cookie_notice_init');
 	}
 
 	// Returns wether cookies are accepted or not
@@ -84,20 +80,12 @@ if (function_exists('acf_add_options_page')) {
 	    }
 	}
 
-	// js version of the cookie notice
-	function cookie_notice_js() {
-	    cookie_notice('js');
-	    wp_enqueue_script('js-cookie', plugin_dir_url(__FILE__) . 'js/js-cookie.js', array('jquery'), true);
-	    wp_enqueue_script('cookie-notice-script', plugin_dir_url(__FILE__) . 'js/script.js', array('jquery','js-cookie'), true);
-	    wp_enqueue_script('cookie-notice-js-mode', plugin_dir_url(__FILE__) . 'js/js-mode.js', array('jquery'), true);
-	}
-
 	//php version of the cookie notice
-	function cookie_notice_php() {
+	function cookie_notice_init() {
 	    if (!isset($_COOKIE['cookie_notice_dismissed'])) {
 	        wp_enqueue_script('js-cookie', plugin_dir_url(__FILE__) . 'js/js-cookie.js', array('jquery'), true);
 	        wp_enqueue_script('cookie-notice-script', plugin_dir_url(__FILE__) . 'js/script.js', array('jquery','js-cookie'), true);
-	        cookie_notice('php');
+	        cookie_notice();
 	    }
 	}
 

@@ -1,13 +1,22 @@
 <?php
-function cookie_notice($mode = 'php'){
+function cookie_notice(){
+    $border_style = get_field('cookie_notice_border', 'option');
+    echo $border_style;
+    if ($border_style == 'top') {
+        $border_class = ' border-top';
+    } elseif ($border_style == 'around') {
+        $border_class = ' border-top border-left border-right';
+    } else {
+        $border_class = '';
+    }
 ?>
     <div class="cookie-notice cookie-boxed" data-reload="<?php echo get_field('cookie_notice_reload_after_accepting', 'option') ? 'true' : 'false'; ?>">
 		<?php include_once( 'cookienoticecss.php' ); ?>
         <?php if (get_field('cookie_notice_style', 'option') != 'full'){ ?>
     	<div class="container">
-            <div class="col-12 cookie-notice-wrapper">
+            <div class="col-12 cookie-notice-wrapper<?php echo $border_class; ?>">
         <?php } else { ?>
-            <div class="container-fluid cookie-notice-wrapper">
+            <div class="container-fluid cookie-notice-wrapper<?php echo $border_class; ?>">
         <?php } ?>
         		<div class="row align-items-center">
         			<div class="col cookie-padding border-right">
