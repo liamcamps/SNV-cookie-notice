@@ -1,4 +1,7 @@
 (function($) {
+	$(window).on('load', function(e) {
+		$('.cookie-notice').addClass('shown');
+	});
 	$(document).on('click','.cookie-notice a', function(e){
 		$this = $(this);
 		if (/#/.test($this.attr('href'))) {

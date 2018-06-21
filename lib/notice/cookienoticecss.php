@@ -1,9 +1,33 @@
 <style>
 	body .cookie-notice {
 		position: fixed;
-		width: 100%;
 		z-index: 9999999;
-		<?php echo get_field('cookie_notice_bottom_top', 'option') == 'top' ? 'top: 0;' : 'bottom: 0;'; ?>
+		<?php if (get_field('cookie_notice_bottom_top', 'option') == 'top') {
+			echo get_field('cookie_notice_offset_top', 'option') ? 'top: '.get_field('cookie_notice_offset_top', 'option').'px;' : 'top: 0;';
+		} else {
+			echo get_field('cookie_notice_offset_bottom', 'option') ? 'bottom: '.get_field('cookie_notice_offset_bottom', 'option').'px;' : 'bottom: 0;';
+		}
+		if (get_field('cookie_notice_style', 'option') == 'full'){
+			echo get_field('cookie_notice_offset_left', 'option') ? 'padding-left: '.get_field('cookie_notice_offset_left', 'option').'px;' : '';
+			echo get_field('cookie_notice_offset_right', 'option') ? 'padding-right: '.get_field('cookie_notice_offset_right', 'option').'px;' : '';
+		} ?>
+		display: none;
+	}
+	body .cookie-notice.cookie-boxed {
+		left: 50%;
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+		-o-transform: translateX(-50%);
+		transform: translateX(-50%);
+	}
+	body .cookie-notice:not(.cookie-boxed) {
+		width: 100%;
+	}
+	body .cookie-notice.shown {
+		display: block;
+	}
+	body .cookie-notice p:last-child{
+		margin-bottom: 0px;
 	}
 	body .cookie-notice p {
 		font-size: <?php echo get_field('cookie_notice_base_font_size', 'option') ? get_field('cookie_notice_base_font_size', 'option') : '16'; ?>px;
@@ -48,6 +72,10 @@
 	body .cookie-notice .cookie-notice-wrapper {
 		background: <?php echo get_field('cookie_notice_background','option') ? get_field('cookie_notice_background','option') : '#fff'; ?>;
 		color: <?php echo get_field('cookie_notice_color','option') ? get_field('cookie_notice_color','option') : '#000'; ?>;
+	}
+
+	body .cookie-notice .border {
+		border: 1px solid <?php echo get_field('cookie_notice_color','option') ? cookienoticehex2rgba(get_field('cookie_notice_color','option'),'0.25') : 'rgba(0,0,0,0.25)'; ?>;
 	}
 
 	body .cookie-notice .border-right {
