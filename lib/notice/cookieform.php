@@ -1,5 +1,6 @@
 <?php
 function cookie_notice_form() {
+    include_once( 'cookieformcss.php' );
 	if (isset($_COOKIE['cookie_notice_accepted'])) {
 		$active = $_COOKIE['cookie_notice_accepted'] == 1 ? 'tracking' : 'functional';
 	} else {

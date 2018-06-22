@@ -90,11 +90,7 @@
 		border-left: 1px solid <?php echo get_field('cookie_notice_color','option') ? cookienoticehex2rgba(get_field('cookie_notice_color','option'),'0.25') : 'rgba(0,0,0,0.25)'; ?>;
 	}
 
-	body .cookie-notice:not(.cookie-boxed) .cookie-padding {
-		padding: <?php echo get_field('cookie_notice_padding','option') ? get_field('cookie_notice_padding','option') : '#30'; ?>px;
-	}
-
-	body .cookie-notice.cookie-boxed .cookie-padding {
-		padding: <?php echo get_field('cookie_notice_padding','option') ? get_field('cookie_notice_padding','option') : '#30'; ?>px 15px;
+	body .cookie-notice .cookie-padding {
+		padding: <?php echo get_field('cookie_notice_padding','option') ? get_field('cookie_notice_padding','option') : '30'; ?>px <?php echo get_field('cookie_notice_padding_horizontal','option') ? get_field('cookie_notice_padding_horizontal','option') : '30'; ?>px;
 	}
 </style>
