@@ -27,7 +27,15 @@ function stijlenvorm_is_this_plugin_active($pluginfile, $my_plugin_name, $depend
     # Needed to the function "deactivate_plugins" works
     include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-    if( !is_plugin_active( $path_to_plugin ) )
+    function is_mu_active($file){
+        if (file_exists(WPMU_PLUGIN_DIR . '/' . $file)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if( !is_plugin_active( $path_to_plugin ) && !is_mu_active($path_to_plugin))
     {
         # Deactivate the current plugin
         deactivate_plugins( plugin_basename( $pluginfile ) );
